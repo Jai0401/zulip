@@ -107,13 +107,13 @@ function retrieve_search_query_data(): SearchData {
 
 export function pick_empty_narrow_banner(): NarrowBannerData {
     const default_banner = {
-        title: $t({defaultMessage: "There are no messages here."}),
+        title: $t({defaultMessage: "There are no messages in your combined feed."}),
         // Spectators cannot start a conversation.
         html: page_params.is_spectator
             ? ""
             : $t_html(
                   {
-                      defaultMessage: "Why not <z-link>start the conversation</z-link>?",
+                      defaultMessage: "Would you like to <z-link>view messages in all public channels</z-link>?",
                   },
                   {
                       "z-link": (content_html) =>
